@@ -25,14 +25,17 @@ public class LoginTest {
     @AfterTest
     public void tearDown() {
         /*
-        Quite driver
-        or close other things, eg: connection to db...
+        Quite driver, close file, close db connection...
          */
     }
 
     @Test(priority = 1, description = "Login with valid email and password")
     public void loginWithValidUser() {
-        // Pre-con: Have a test account with email: long.nguyenvan@opti.com
+        /*
+            Pre-con: Create a new account or use a sharable account for whole test suite
+            I'm assuming I already had an active account with email: long.nguyenvan@opti.com
+        */
+         */
         LoginPage loginPage = new LoginPage(driver);
         loginPage
                 .loginValidUser("long.nguyenvan@opti.com", "@123456Long")
