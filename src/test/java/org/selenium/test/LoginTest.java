@@ -12,24 +12,22 @@ import textResources.TextResource;
 import java.time.Duration;
 
 public class LoginTest {
-    WebDriver driver = new ChromeDriver(); // Move to driver manager class for re-use
-
     @BeforeTest
     public void setUp() {
         /*
             Move these config in web driver manager class for re-use
             Maximize window
-            Set timeout for page loading
+            Set timeout for page loading, explicitly wait
             Config url
         */
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://example.com/");
     }
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
+        /*
+        Quite driver
+        or close other things, eg: connection to db...
+         */
     }
 
     @Test(priority = 1, description = "Login with valid email and password")
